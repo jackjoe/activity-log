@@ -11,19 +11,21 @@ Based on `Regulus/ActivityLog`.
 
 **Basic installation, service provider registration, and aliasing:**
 
-To install ActivityLog, make sure `jackjoe/activity-log` has been added to Laravel 5's `composer.json` file.
+To install ActivityLog, make sure `jackjoe/activity-log` has been added to Laravel 5's `composer.json` file or:
 
-	"require": {
-		"regulus/activity-log": "0.1.*"
-	},
+  $ composer require sentry/sentry-laravel
 
-Then run `php composer.phar update` from the command line. Composer will install the ActivityLog package. Now, all you have to do is register the service provider and set up ActivityLog's alias. In `app/config/app.php`, add this to the `providers` array:
+Add the ActivityLog service provider and facade in `config/app.php`:
 
-	JackJoe\ActivityLog\ActivityLogServiceProvider::class,
+  'providers' => array(
+    // ...
+    JackJoe\ActivityLog\ActivityLogServiceProvider::class,
+  )
 
-And add this to the `aliases` array:
-
-	'Activity' => JackJoe\ActivityLog\Models\Activity::class,
+  'aliases' => array(
+    // ...
+    'Activity' => JackJoe\ActivityLog\Models\Activity::class,
+  )
 
 **Publishing migrations and configuration:**
 
