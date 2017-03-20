@@ -1,6 +1,8 @@
 ActivityLog
 ===========
 
+Based on `Regulus/ActivityLog`.
+
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
 
