@@ -14,7 +14,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"JackJoe\\ActivityLog\\": "src/",
+			"JackJoe\\ActivityLog\\": "src/"
 		}
 	}
 }
