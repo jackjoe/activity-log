@@ -13,7 +13,9 @@ Based on `Regulus/ActivityLog`.
 
 To install ActivityLog, make sure `jackjoe/activity-log` has been added to Laravel 5's `composer.json` file or:
 
-  $ composer require sentry/sentry-laravel
+```
+$ composer require sentry/sentry-laravel
+```
 
 Add the ActivityLog service provider and facade in `config/app.php`:
 
