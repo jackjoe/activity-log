@@ -17,15 +17,17 @@ To install ActivityLog, make sure `jackjoe/activity-log` has been added to Larav
 
 Add the ActivityLog service provider and facade in `config/app.php`:
 
-  'providers' => array(
-    // ...
-    JackJoe\ActivityLog\ActivityLogServiceProvider::class,
-  )
+```
+'providers' => array(
+  // ...
+  JackJoe\ActivityLog\ActivityLogServiceProvider::class,
+)
 
-  'aliases' => array(
-    // ...
-    'Activity' => JackJoe\ActivityLog\Models\Activity::class,
-  )
+'aliases' => array(
+  // ...
+  'Activity' => JackJoe\ActivityLog\Models\Activity::class,
+)
+```
 
 **Publishing migrations and configuration:**
 
