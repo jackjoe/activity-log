@@ -2,6 +2,13 @@
 	"name": "jackjoe/activity-log",
 	"description": "A clean and simple Laravel 5 activity logger for logging website / application actions.",
 	"license": "MIT",
+  "keywords": [
+    "jackjoe",
+    "log",
+    "user",
+    "activity",
+    "laravel"
+  ],
 	"authors": [
 		{
 			"name": "Pieter Michels",
@@ -9,12 +16,25 @@
 		}
 	],
 	"require": {
-		"php": ">=5.4.0",
+		"php": ">=5.6.0",
 		"laravel/framework": ">=5.2.0"
 	},
+  "require-dev": {
+    "phpunit/phpunit": "^5.7",
+    "orchestra/testbench": "~3.3.0|~3.4.0",
+    "orchestra/database": "~3.3.0|~3.4.0"
+  },
 	"autoload": {
 		"psr-4": {
 			"JackJoe\\ActivityLog\\": "src/"
 		}
-	}
+	},
+  "autoload-dev": {
+    "psr-4": {
+      "JackJoe\\Activitylog\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  }
 }

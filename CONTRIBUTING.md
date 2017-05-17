@@ -10,7 +10,7 @@ Also try to code in the same style as Laravel (which followes the [PSR standard]
 
 - **Add tests!** - Your patch likely won't be accepted if it doesn't have tests.
 
-- **Document any change in behaviour** - Make sure the `readme.md`, `changlog.md` and any other relevant documentation are kept up-to-date.
+- **Document any change in behaviour** - Make sure the `readme.md` and any other relevant documentation are kept up-to-date.
 
 - **Consider our release cycle** - We try to follow [SemVer v2.0.0](http://semver.org/). Randomly breaking public APIs is not an option.
 
