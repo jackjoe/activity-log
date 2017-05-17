@@ -1,7 +1,7 @@
-ActivityLog
-===========
+# ActivityLog
 
-Based on `Regulus/ActivityLog`.
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jackjoe/activity-log.svg?style=flat-square)](https://packagist.org/packages/jackjoe/activity-log)
+[![Total Downloads](https://img.shields.io/packagist/dt/jackjoe/activity-log.svg?style=flat-square)](https://packagist.org/packages/jackjoe/activity-log)
 
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
@@ -9,29 +9,23 @@ Based on `Regulus/ActivityLog`.
 <a name="installation"></a>
 ## Installation
 
-**Basic installation, service provider registration, and aliasing:**
+### Basic installation, service provider registration, and aliasing:
 
-To install ActivityLog, make sure `jackjoe/activity-log` has been added to Laravel 5's `composer.json` file or:
+To install the package, make sure `jackjoe/activity-log` has been added to Laravel 5's `composer.json` file.
 
-```
-$ composer require sentry/sentry-laravel
-```
+	"require": {
+		"jackjoe/activity-log": "0.1.*"
+	},
 
-Add the ActivityLog service provider and facade in `config/app.php`:
+Then run `php composer.phar update` from the command line. Composer will install the ActivityLog package. Now, all you have to do is register the service provider and set up ActivityLog's alias. In `app/config/app.php`, add this to the `providers` array:
 
-```
-'providers' => array(
-  // ...
-  JackJoe\ActivityLog\ActivityLogServiceProvider::class,
-)
+	JackJoe\ActivityLog\ActivityLogServiceProvider::class,
 
-'aliases' => array(
-  // ...
-  'Activity' => JackJoe\ActivityLog\Models\Activity::class,
-)
-```
+And add this to the `aliases` array:
 
-**Publishing migrations and configuration:**
+	'Activity' => JackJoe\ActivityLog\Models\Activity::class,
+
+### Publishing migrations and configuration:
 
 To publish this package's configuration and migrations, run this from the command line:
 
@@ -46,7 +40,7 @@ To run migration to create ActivityLog's table, run this from the command line:
 <a name="basic-usage"></a>
 ## Basic Usage
 
-**Logging user activity:**
+### Logging user activity:
 
 ```php
 Activity::log([
@@ -69,3 +63,15 @@ The above code will log an activity for the currently logged in user. The IP add
 - `description`: state of action such as `ERROR`, `SUCCESS`, `WRONG_CODE`, ...
 - `details`: more like meta date about current state
 - `data`: raw data, fetched content, posted content, ...
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Credits
+
+Based on `Regulus/ActivityLog`.
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

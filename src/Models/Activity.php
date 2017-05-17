@@ -1,7 +1,6 @@
 <?php namespace JackJoe\ActivityLog\Models;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 
@@ -39,7 +38,7 @@ class Activity extends Eloquent {
 	public function user()
 	{
 		return $this->belongsTo(config('auth.providers.users.model'), 'user_id');
-	}
+  }
 
 	/**
 	 * Create an activity log entry.
@@ -93,28 +92,5 @@ class Activity extends Eloquent {
 		static::create($data);
 
 		return true;
-	}
-
-	/**
-	 * Get the name of the user.
-	 *
-	 * @return string
-	 */
-	public function getName()
-	{
-		$user = $this->user;
-    if(empty($user)) {
-			return config('log.names.unknown');
-    }
-
-    if(!config('log.full_name_as_name')) {
-			return !is_null($user->username) ? $user->username : $user->name;
-    }
-
-    if(config('log.full_name_last_name_first')) {
-			return $user->last_name.', '.$user->first_name;
-    } else {
-			return $user->first_name.' '.$user->last_name;
-    }
 	}
 }

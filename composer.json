@@ -1,6 +1,6 @@
 {
 	"name": "jackjoe/activity-log",
-	"description": "A clean and simple Laravel 5 activity logger for logging website / application actions. Based on Regulus/ActivityLog",
+	"description": "A clean and simple Laravel 5 activity logger for logging website / application actions.",
 	"license": "MIT",
 	"authors": [
 		{

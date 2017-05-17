@@ -26,25 +26,4 @@ return [
 	'defaults' => [
 	],
 
-  /**
-   * Name
-   */
-	'names' => [
-		'unknown'   => 'Unknown User',
-	],
-
-  /**
-   * Full Name as Name
-   *
-   * If "full_name_as_name" is true,
-   * the "first_name" and "last_name" attributes
-   * are concantenated together, separated by a space.
-   * If false, the "username" attribute of the user is used
-   * as the name instead. If "full_name_last_name_first" is set,
-   * the name will be displayed like
-   * "Smith, John" instead of "John Smith".
-   */
-	'full_name_as_name'         => true,
-	'full_name_last_name_first' => false,
-
 ];
