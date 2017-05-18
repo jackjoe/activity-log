@@ -40,7 +40,6 @@ checks:
             verify_parent_constraints: true
         align_assignments: true
 
-filter: {  }
 coding_style:
     php:
         indentation:
