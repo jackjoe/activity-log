@@ -9,7 +9,7 @@ return [
   'auto_set_user_id' => true,
 
   /**
-   * Auth Method
+   * Auth driver
    *
    * If you are using any alternative packages for Authentication
    * and User management then you can put in the appropriate

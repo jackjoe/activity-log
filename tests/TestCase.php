@@ -49,8 +49,8 @@ abstract class TestCase extends OrchestraTestCase
   {
     $this->resetDatabase();
     $this->createActivityLogTable();
-    $this->createTables('users');
-    $this->seedModels(User::class);
+    $this->createTableUsers();
+    $this->seedUsers();
   }
 
   protected function resetDatabase()
@@ -65,30 +65,29 @@ abstract class TestCase extends OrchestraTestCase
     (new \CreateActivityLogTable())->up();
   }
 
-  public function getTempDirectory(): string
+  public function getTempDirectory()
   {
     return __DIR__ . '/temp';
   }
 
-  protected function createTables(...$tableNames)
+  protected function createTableUsers()
   {
-    collect($tableNames)->each(function (string $tableName) {
-      $this->app['db']->connection()->getSchemaBuilder()->create($tableName, function (Blueprint $table) use ($tableName) {
+    $this->app['db']
+      ->connection()
+      ->getSchemaBuilder()
+      ->create("users", function (Blueprint $table) {
         $table->increments('id');
         $table->string('name')->nullable();
         $table->string('text')->nullable();
         $table->timestamps();
         $table->softDeletes();
       });
-    });
   }
 
-  protected function seedModels(...$modelClasses)
+  protected function seedUsers()
   {
-    collect($modelClasses)->each(function (string $modelClass) {
-      foreach(range(1, 0) as $index) {
-        $modelClass::create(['name' => "name {$index}"]);
-      }
-    });
+    foreach(range(1, 0) as $index) {
+      User::create(['name' => "name {$index}"]);
+    }
   }
 }

@@ -49,7 +49,7 @@ class Activity extends Eloquent {
 	public static function log($data = [])
 	{
 		// set the defaults from config
-		$defaults = config('log.defaults');
+		$defaults = config('activity-log.defaults');
     if(!is_array($defaults)) {
 			$defaults = [];
     }
@@ -58,9 +58,9 @@ class Activity extends Eloquent {
       $data = (array) $data;
     }
 
-		// set the user ID
-		if(config('log.auto_set_user_id') && !isset($data['userId'])) {
-			$user = call_user_func(config('log.auth_method'));
+    // set the user ID
+		if(config('activity-log.auto_set_user_id') && !isset($data['userId'])) {
+      $user = call_user_func(config('activity-log.auth_method'));
 			$data['userId'] = isset($user->id) ? $user->id : null;
 		}
 

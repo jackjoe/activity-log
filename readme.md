@@ -1,6 +1,7 @@
 # ActivityLog
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/jackjoe/activity-log.svg?style=flat-square)](https://packagist.org/packages/jackjoe/activity-log)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jackjoe/activity-log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jackjoe/activity-log/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/jackjoe/activity-log.svg?style=flat-square)](https://packagist.org/packages/jackjoe/activity-log)
 
 - [Installation](#installation)
