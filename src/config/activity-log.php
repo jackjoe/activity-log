@@ -2,11 +2,11 @@
 
 return [
   /**
-	 * Auto Set User ID
-	 *
-	 * If false, user ID will not be automatically set.
+   * Auto Set User ID
+   *
+   * If false, user ID will not be automatically set.
    */
-	'auto_set_user_id' => true,
+  'auto_set_user_id' => true,
 
   /**
    * Auth Method
@@ -18,12 +18,12 @@ return [
    * you would put Sentry::getUser()
    * instead of Laravel's default which is Auth::user().
    */
-	'auth_method' => '\Auth::user',
+  'auth_method' => '\Auth::user',
 
   /**
    * Default Values
    */
-	'defaults' => [
-	],
+  'defaults' => [
+  ],
 
 ];

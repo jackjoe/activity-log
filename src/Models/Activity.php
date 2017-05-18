@@ -89,8 +89,8 @@ class Activity extends Eloquent {
 		$data = array_merge($defaults, $dataFormatted);
 
 		// create the record
-		static::create($data);
+		$self = static::create($data);
 
-		return true;
+		return $self;
 	}
 }

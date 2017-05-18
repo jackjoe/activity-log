@@ -18,7 +18,7 @@ class ActivityLogServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->publishes([
-			__DIR__ . '/config/log.php' => config_path('log.php'),
+			__DIR__ . '/config/activity-log.php' => config_path('activity-log.php'),
 		]);
 
 		$this->publishes([
