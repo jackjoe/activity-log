@@ -16,7 +16,7 @@
 To install the package, make sure `jackjoe/activity-log` has been added to Laravel 5's `composer.json` file.
 
 	"require": {
-		"jackjoe/activity-log": "0.1.*"
+		"jackjoe/activity-log": "0.2.*"
 	},
 
 Then run `php composer.phar update` from the command line. Composer will install the ActivityLog package. Now, all you have to do is register the service provider and set up ActivityLog's alias. In `app/config/app.php`, add this to the `providers` array:
@@ -47,9 +47,9 @@ To run migration to create ActivityLog's table, run this from the command line:
 ```php
 Activity::log([
   'contentId'   => $user->id,
-  'contentType' => 'User',
+  'content' => 'User',
   'action'      => 'ACTION',
-  'description' => 'SUCCESS
+  'state'       => 'SUCCESS
   'details'     => 'Username: ' . $user->username,
   'data'        => json_encode($data)
 ]);
@@ -59,10 +59,10 @@ The above code will log an activity for the currently logged in user. The IP add
 
 ### Variable guidelines
 
-- `contentType`: type of content we are dealing with, can be set to match PHP class, controller, model, ... It gives us more context where this action has taken place.
+- `content`: type of content we are dealing with, can be set to match PHP class, controller, model, ... It gives us more context where this action has taken place.
 - `contentId` (option): id of content, in case of a model
 - `action`: method name, sub-action in method, ..
-- `description`: state of action such as `ERROR`, `SUCCESS`, `WRONG_CODE`, ...
+- `state`: state of action such as `ERROR`, `SUCCESS`, `WRONG_CODE`, ...
 - `details`: more like meta date about current state
 - `data`: raw data, fetched content, posted content, ...
 

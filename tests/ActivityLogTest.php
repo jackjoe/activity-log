@@ -22,7 +22,7 @@ class ActivityLogTest extends TestCase
   /** @test */
   public function it_returns_instance_of_activity_model()
   {
-    $result = Activity::log(['contentType' => 'Something']);
+    $result = Activity::log(['content' => 'Something']);
 
     $this->assertInstanceOf(Activity::class, $result);
   }
@@ -31,7 +31,7 @@ class ActivityLogTest extends TestCase
   public function it_has_a_relation_to_a_user()
   {
     $user = User::first();
-    $result = Activity::log(['contentType' => 'Something', 'userId' => $user->id]);
+    $result = Activity::log(['content' => 'Something', 'userId' => $user->id]);
 
     $this->assertInstanceOf(User::class, $result->user);
     $this->assertEquals($user->id, $result->user->id);
@@ -42,7 +42,7 @@ class ActivityLogTest extends TestCase
   {
     $user = User::first();
     Auth::login($user);
-    $result = Activity::log(['contentType' => 'Something']);
+    $result = Activity::log(['content' => 'Something']);
 
     $this->assertInstanceOf(User::class, $result->user);
     $this->assertEquals($user->id, $result->user->id);
@@ -54,19 +54,19 @@ class ActivityLogTest extends TestCase
     $user = User::first();
     Auth::login($user);
     $result = Activity::log([
-      'contentType' => 'NewsItem',
+      'content' => 'NewsItem',
       'contentId' => 1,
-      'description' => 'Something',
-      'details' => 'DETAILS',
+      'state' => 'SUCCESS',
+      'details' => 'details',
       'data' => ['iets' => (object) ['prop' => 2, 'erty' => 3]]
     ]);
 
     $result->setHidden(['id', 'created_at', 'updated_at']);
     $this->assertEquals([
-      "content_type" => "NewsItem",
+      "content" => "NewsItem",
       "content_id" => 1,
-      "description" => "Something",
-      "details" => "DETAILS",
+      "state" => "SUCCESS",
+      "details" => "details",
       "data" => '{"iets":{"prop":2,"erty":3}}',
       "user_id" => 1,
       "ip_address" => "127.0.0.1",

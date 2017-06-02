@@ -19,10 +19,10 @@ class Activity extends Eloquent {
    */
   protected $fillable = [
     'user_id',
-    'content_type',
+    'content',
     'content_id',
     'action',
-    'description',
+    'state',
     'details',
     'data',
     'version',
@@ -33,7 +33,7 @@ class Activity extends Eloquent {
   /**
    * Get the user that the activity belongs to.
    *
-   * @return object
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
    */
   public function user()
   {
@@ -56,6 +56,16 @@ class Activity extends Eloquent {
 
     if (is_object($data)) {
       $data = (array) $data;
+    }
+
+    // conversion path to content
+    if (isset($data['contentType']) && !isset($data['content'])) {
+      $data['content'] = $data['contentType'];
+    }
+
+    // conversion path to state
+    if (isset($data['description']) && !isset($data['state'])) {
+      $data['state'] = $data['description'];
     }
 
     // set the user ID

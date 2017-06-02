@@ -18,16 +18,16 @@ class CreateActivityLogTable extends Migration {
       $table->integer('user_id')->nullable();
       $table->integer('content_id')->nullable();
 
-      $table->string('content_type', 72)->nullable();
+      $table->string('content', 72)->nullable();
       $table->string('action', 32)->nullable();
-      $table->string('description')->nullable();
+      $table->string('state', 32)->nullable();
 
       $table->longText('details')->nullable();
       $table->longText('data')->nullable();
 
       $table->string('version', 10)->nullable();
       $table->string('ip_address', 64);
-      $table->string('user_agent');
+      $table->string('user_agent', 255);
 
       $table->timestamp('created_at')->useCurrent();
       $table->timestamp('updated_at')->useCurrent();
