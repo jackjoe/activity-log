@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/jackjoe/activity-log.svg?branch=master)](https://travis-ci.org/jackjoe/activity-log)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jackjoe/activity-log/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jackjoe/activity-log/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/jackjoe/activity-log.svg?style=flat-square)](https://packagist.org/packages/jackjoe/activity-log)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjackjoe%2Factivity-log.svg?type=shield)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjackjoe%2Factivity-log?ref=badge_shield)
 
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
@@ -77,3 +78,6 @@ Based on `Regulus/ActivityLog`.
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjackjoe%2Factivity-log.svg?type=large)](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fjackjoe%2Factivity-log?ref=badge_large)
