@@ -34,9 +34,9 @@
   },
   "extra": {
     "laravel": {
-      "providers": ["JackJoeActivityLogActivityLogServiceProvider::class"],
+      "providers": ["JackJoe\\ActivityLog\\ActivityLogServiceProvider::class"],
       "aliases": {
-        "Activity": "JackJoeActivityLogModelsActivity::class"
+        "Activity": "JackJoe\\ActivityLog\\Models\\Activity::class"
       }
     }
   }
