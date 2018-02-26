@@ -17,15 +17,7 @@ class ActivityLogServiceProvider extends ServiceProvider {
    */
   public function boot()
   {
-    $this->publishes([
-      __DIR__ . '/config/activity-log.php' => config_path('activity-log.php'),
-    ]);
-
-    $this->publishes([
-      __DIR__ . '/migrations' => database_path('migrations'),
-    ], 'migrations');
-
-    $this->mergeConfigFrom(__DIR__ . '/config/activity-log.php', 'activity-log');
+    $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
   }
 
   /**
@@ -35,7 +27,7 @@ class ActivityLogServiceProvider extends ServiceProvider {
    */
   public function register()
   {
-    //
+    $this->mergeConfigFrom(__DIR__ . '/../config/activity-log.php', 'activity-log');
   }
 
   /**
