@@ -42,7 +42,7 @@ And add this to the `aliases` array:
 
 To publish this package's configuration, run this from the command line:
 
-    php artisan vendor:publish --provider="Vendor\JackJoe\ActivityLog\ActivityLogServiceProvider"
+    php artisan vendor:publish --provider="JackJoe\ActivityLog\ActivityLogServiceProvider"
 
 > **Note:** Migrations are only published; remember to run them when ready.
 
