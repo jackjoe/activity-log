@@ -18,6 +18,9 @@ class ActivityLogServiceProvider extends ServiceProvider {
   public function boot()
   {
     $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+    $this->publishes([
+      __DIR__ . '/../config/acivity-log.php' => config_path('activity-log.php'),
+    ]);
   }
 
   /**
