@@ -19,7 +19,7 @@ class ActivityLogServiceProvider extends ServiceProvider {
   {
     $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     $this->publishes([
-      __DIR__ . '/../config/acivity-log.php' => config_path('activity-log.php'),
+      __DIR__ . '/../config/activity-log.php' => config_path('activity-log.php'),
     ]);
   }
 
