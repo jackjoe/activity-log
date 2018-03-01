@@ -60,7 +60,7 @@ abstract class TestCase extends OrchestraTestCase
 
   protected function createActivityLogTable()
   {
-    include_once '__DIR__' . '/../src/migrations/2017_06_03_133219_create_activity_log_table.php';
+    include_once '__DIR__' . '/../database/migrations/2017_06_03_133219_create_activity_log_table.php';
 
     (new \CreateActivityLogTable())->up();
   }
