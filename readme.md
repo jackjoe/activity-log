@@ -61,7 +61,7 @@ Activity::log([
   'contentId'   => $user->id,
   'content' => 'User',
   'action'      => 'ACTION',
-  'state'       => 'SUCCESS
+  'state'       => 'SUCCESS',
   'details'     => 'Username: ' . $user->username,
   'data'        => json_encode($data)
 ]);
